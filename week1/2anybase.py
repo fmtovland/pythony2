@@ -12,11 +12,13 @@ output=[]
 output.append(int(number))
 
 i=0
-while output[i]>base:
+while output[i]>=base:
 	output.append(0)
-	while output[i]>base:
+	while output[i]>=base:
 		output[i+1]=output[i+1]+1
 		output[i]=output[i]-base
+		print(output)			#for debugging
+	i=i+1
 
 #print(number,"in base",base,"is",output)	#good for debug, but prints backward
 
