@@ -4,6 +4,10 @@ number=input("Enter number: ")
 base=input("Enter base to convert to: ")
 base=int(base)	#convert base to intager
 
+#prevent user entering number greater than 9
+if base>9:
+	quit("Error, only 1 through nine are accepted")
+
 output=[]
 output.append(int(number))
 
