@@ -17,6 +17,8 @@ while output[i]>base:
 #print(number,"in base",base,"is",output)	#good for debug, but prints backward
 
 #print the output reversed
+print(number,"in base",base,"is",end=' ')	#the above but leaves printing output to below
+
 i=len(output) - 1
 while i>= 0:
 	print(output[i],end='')
