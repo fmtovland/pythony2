@@ -8,7 +8,7 @@ number=input("Enter a number: ")
 number=int(number)
 
 biggest=int(log2(number))	#find how many 1s and 0s are in the output
-print(biggest)
+#print(biggest)			#for debugging
 output=[]			#an empty list, which will be populated with 1s and 0s
 
 while(biggest>=0):
