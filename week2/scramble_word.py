@@ -11,7 +11,7 @@ i=0	#index of first letter of word
 j=0	#index of space after word
 
 while i < len(user_input):	#program will loop till i reaches end
-	while user_input[j] != (' ' or '.' or ','):
+	while user_input[j] != (' ' or '.' or ',' or '?' or '!'):
 		j=j+1
 	j=j-1
 
