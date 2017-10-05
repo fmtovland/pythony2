@@ -9,3 +9,15 @@
 #get filename from command line
 import sys
 filename=sys.argv[1]	#make the last argument be the filename
+
+#open file for reading
+abcfile=open(filename,"r")
+
+for line in abcfile:
+
+	if line[0] == 'X':
+		print("Id is",line[2:])
+
+
+#close file
+abcfile.close()
