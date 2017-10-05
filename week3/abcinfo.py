@@ -29,7 +29,10 @@ for line in abcfile:
 		print("Key signature is",line[2:-1],";",end=' ')
 
 	elif line[0] == 'M':
-		print("Time signature is",line[2:-1],";",end=' ')
+		if line[2]=="C":
+			print("Time signature is commontime ;",end=' ')
+		else:
+			print("Time signature is",line[2:-1],";",end=' ')
 
 print()	#print one last line
 
