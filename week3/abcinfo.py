@@ -19,14 +19,19 @@ for line in abcfile:
 
 	if line[0] == 'X':
 		print("\nId is",line[2:-1],";",end=' ')	#line sepperator declared here
+		title=True				#ensure only the first title is printed
 
 	elif line[0] == 'T' and title==True:
 		print("Title is",line[2:-1],";",end=' ')
 		title=False
 
-	else:
-		title=True
-#		print("")	#print a newline
+	elif line[0] == 'K':
+		print("Key signature is",line[2:-1],";",end=' ')
+
+	elif line[0] == 'M':
+		print("Time signature is",line[2:-1],";",end=' ')
+
+print()	#print one last line
 
 #close file
 abcfile.close()
