@@ -13,11 +13,20 @@ filename=sys.argv[1]	#make the last argument be the filename
 #open file for reading
 abcfile=open(filename,"r")
 
+title=True	#ensure only the first title is printed
+
 for line in abcfile:
 
 	if line[0] == 'X':
-		print("Id is",line[2:])
+		print("\nId is",line[2:-1],";",end=' ')	#line sepperator declared here
 
+	elif line[0] == 'T' and title==True:
+		print("Title is",line[2:-1],";",end=' ')
+		title=False
+
+	else:
+		title=True
+#		print("")	#print a newline
 
 #close file
 abcfile.close()
