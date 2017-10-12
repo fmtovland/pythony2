@@ -6,10 +6,14 @@
 #Python version: 3.4.5
 
 size=1
-mylist=[input("Enter numbers line after line: finish with a zero\n")]
-while True:
+mylist=[]
+tmp=input("Enter numbers line after line: finish with an empty line\n")
+while tmp != '':
+	mylist.append(tmp)
 	tmp=input()
-	if tmp=='':
-		break
-	else:
-		mylist.append(tmp)
+
+bsort(mylist)	#bsort will be a funtion to bubble sort
+
+print(mylist)	#print sorted list
+
+#def
