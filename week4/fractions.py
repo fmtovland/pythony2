@@ -24,3 +24,17 @@ def gcd(bignum,smallnum):
 		third=tmp2
 
 	return third
+
+def lcm(bignum,smallnum):
+	'''find the lowest common multiple of two numbers'''
+
+	#ensure the numbskull using this function hasn't confused the arguments
+	#copied from gcd
+	if bignum<smallnum:
+		tmp=bignum
+		bignum=smallnum
+		smallnum=tmp
+
+	comDivisor=gcd(bignum,smallnum)
+	answer=(bignum*smallnum)/comDivisor
+	return answer
