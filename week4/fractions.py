@@ -38,3 +38,17 @@ def lcm(bignum,smallnum):
 	comDivisor=gcd(bignum,smallnum)
 	answer=(bignum*smallnum)/comDivisor
 	return answer
+
+def addFrac(frac1,frac2)
+	'''add two fractions together
+	the fractions should be in the form
+	(a,b) with a as the numberator and b
+	the denominator'''
+
+	commonDenominator=lcm(frac1[1],frac2[1])
+
+	factor1=frac1[1]/commonDenominator	#the number to multiply the numberator and denominator of the first fraction by
+	factor2=frac2[1]/commonDenominator	#	"	"	"	"	"	"	" the second fraction by
+
+	frac1=(frac1[0]*commonDenominator,frac1[1]*commonDenominator)
+	frac2=(frac2[0]*commonDenominator,frac2[1]*commonDenominator)
