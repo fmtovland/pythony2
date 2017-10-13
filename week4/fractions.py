@@ -74,3 +74,12 @@ def subFrac(frac1,frac2):
 	answer=(frac2[0]-frac1[0],commonDenominator)
 
 	return answer
+
+def reduce(frac):
+	'''simplify a given fraction argument'''
+
+	common=gcd(frac[0],frac[1])
+
+	fraction=(frac[0]/common,frac[1]/common)
+
+	return fraction
