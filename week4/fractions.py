@@ -56,3 +56,21 @@ def addFrac(frac1,frac2):
 	answer=(frac1[0]+frac2[0],commonDenominator)
 
 	return answer
+
+def subFrac(frac1,frac2):
+	'''subtract one fraction from another
+	the fractions should be in the form
+	(a,b) with a as the numberator and b
+	the denominator'''
+
+	commonDenominator=lcm(frac1[1],frac2[1])
+
+	factor1=commonDenominator/frac1[1]	#the number to multiply the numberator and denominator of the first fraction by
+	factor2=commonDenominator/frac2[1]	#	"	"	"	"	"	"	" the second fraction by
+
+	frac1=(frac1[0]*factor2,commonDenominator)
+	frac2=(frac2[0]*factor1,commonDenominator)
+
+	answer=(frac1[0]-frac2[0],commonDenominator)
+
+	return answer
