@@ -54,6 +54,7 @@ def addFrac(frac1,frac2):
 	frac2=(frac2[0]*factor1,commonDenominator)
 
 	answer=(frac1[0]+frac2[0],commonDenominator)
+	answer=reduce(answer)
 
 	return answer
 
@@ -72,6 +73,7 @@ def subFrac(frac1,frac2):
 	frac2=(frac2[0]*factor1,commonDenominator)
 
 	answer=(frac2[0]-frac1[0],commonDenominator)
+	answer=reduce(answer)
 
 	return answer
 
