@@ -73,12 +73,12 @@ def printword(word,guesses):
 	print()
 
 
-secretword=genword()	#generate a word for the user to guess at
-limbs=0			#number of wrong guesses made
-remlets=len(secretword)	#number of letters left to guess
-guesses=[]		#letters that have already been guessed
+secretword=genword()		#generate a word for the user to guess at
+limbs=0				#number of wrong guesses made
+remlets=len(secretword)		#number of letters left to guess
+guesses=[]			#letters that have already been guessed
 
-while limbs<6 and remlets>0:		#break out of loop when all limbs have been drawn
+while limbs<6 and remlets!=0:		#break out of loop when all limbs have been drawn
 	print("\n")			#space between iterations
 	drawman(limbs)			#draw the hangman (not implemented in this revision)
 	printword(secretword,guesses)	#see ''' ''' comment
