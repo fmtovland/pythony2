@@ -81,6 +81,7 @@ guesses=[]			#letters that have already been guessed
 while limbs<6 and remlets!=0:		#break out of loop when all limbs have been drawn
 	print("\n")			#space between iterations
 	drawman(limbs)			#draw the hangman (not implemented in this revision)
+	print("letters guessed:",guesses)
 	printword(secretword,guesses)	#see ''' ''' comment
 
 	guesses.append(input("Guess a letter: "))
