@@ -10,7 +10,42 @@ dicsize=159344	#number of words in dictionary.txt
 
 def drawman(limbs):
 	'''draw a hangman with a specified number of limbs'''
-	print("limbs=",limbs)
+	print("---------")
+	print("|       |")
+
+	#head
+	print("|       ",end='')
+	if limbs>0:
+		print("O",end='')
+	print()
+
+	#body
+	print("|      ",end='')
+	if limbs>2:
+		print("-|",end='')
+	elif limbs>1:
+		print(" |",end='')
+	if limbs>3:
+		print("-",end='')
+	print()
+
+	#body part 2
+	print("|       ",end='')
+	if limbs>1:
+		print("|",end='')
+	print()
+
+	#legs
+	print("|      ",end='')
+	if limbs>4:
+		print("/ ",end='')
+	if limbs>5:
+		print("\\",end='')
+	print()
+
+	#two more |s
+	print("|\n|")
+
 
 def genword():
 	'''return a random word from dictionary.txt'''
@@ -44,6 +79,7 @@ remlets=len(secretword)	#number of letters left to guess
 guesses=[]		#letters that have already been guessed
 
 while limbs<6 and remlets>0:		#break out of loop when all limbs have been drawn
+	print("\n")			#space between iterations
 	drawman(limbs)			#draw the hangman (not implemented in this revision)
 	printword(secretword,guesses)	#see ''' ''' comment
 
