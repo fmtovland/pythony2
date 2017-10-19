@@ -87,7 +87,9 @@ while limbs<6 and remlets!=0:		#break out of loop when all limbs have been drawn
 	guesses.append(input("Guess a letter: "))
 
 	if guesses[-1] in secretword:
-		remlets=remlets-1
+		for letter in secretword:
+			if guesses[-1] == letter:
+				remlets=remlets-1
 	else:
 		limbs=limbs+1
 
