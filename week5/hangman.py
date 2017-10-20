@@ -93,6 +93,7 @@ while limbs<6 and remlets!=0:		#break out of loop when all limbs have been drawn
 	else:
 		limbs=limbs+1
 
+print("\n")
 drawman(limbs)
 printword(secretword,guesses)
 
