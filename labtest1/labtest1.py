@@ -53,6 +53,6 @@ except ValueError:
 	print("That was not a freaking number!")
 	exit()
 
-for i in range(1,topnum):
+for i in range(1,topnum+1):	#the +1 means from 1 to topnum inclusive
 	if ishappy(i):
 		print(i)
