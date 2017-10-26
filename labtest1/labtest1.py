@@ -10,7 +10,7 @@ from math import log10
 def numaslist(num):
 	'''convert a number to a list of numbers: ie 123 to {1,2,3}'''
 	numlist=[]
-	lennum=int(log10(num)+1)	#would put +1 here but that would neseseitate a -1 on the very next line
+	lennum=int(log10(num)+1)
 	for i in range(0,lennum):
 		numlist.insert(0,num%10)
 		num=int(num/10)
@@ -31,6 +31,19 @@ def listasnum(list):
 def ishappy(num):
 	'''check if a number is happy'''
 	numlist=numaslist(num)
+	number=0
+	while (number != 1) and (number != 4):
+		number=0
+		for i in range(0,len(numlist)):
+			number=number+(numlist[i]**2)
+		numlist=numaslist(number)
+
+	if number == 4:
+		return False
+	elif number == 1:
+		return True
+	else:
+		return number
 
 topnum=print("Enter a number. All happy numbers upto that number will be printed\nEnter number:")
 #no time for error checking, assuming perfect input
