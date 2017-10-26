@@ -16,12 +16,12 @@ def numaslist(num):
 		num=int(num/10)
 	return numlist
 
-def listasnum(list):
+def listasnum(list):	#thought this was needed. it wasn't. ah well...
 	'''the inverse of numaslist'''
 	number=0	#all vars are global. using the same name so often is asking for trouble
 	multiplicitive=1
 	lent=len(list)-1
-	while lent>=0:
+	while lent>=0:	#calculate most least figure first
 		number=number+(list[lent]*multiplicitive)
 		multiplicitive=multiplicitive*10
 		lent=lent-1
@@ -30,29 +30,34 @@ def listasnum(list):
 
 def ishappy(num):
 	'''check if a number is happy'''
-	numlist=numaslist(num)
+	numlist=numaslist(num)	#convert to something indexable with a for loop
 	number=0
-	while (number != 1) and (number != 4):
+	while (number != 1) and (number != 4):	#wait till the number defining whether happy or not is reached
 		number=0
-		for i in range(0,len(numlist)):
+		for i in range(0,len(numlist)):	#calculate sum of squares
 			number=number+(numlist[i]**2)
 		numlist=numaslist(number)
 
 	if number == 4:
-		return False
+		return False	#not happy
 	elif number == 1:
-		return True
+		return True	#happy
 	else:
-		return number
+		return number	#something has most certainly gone wrong
 
-topnum=input("Enter a number. All happy numbers upto that number will be printed\nEnter number: ")
 
+#int main() equivilant starts here
+topnum=input("Enter a number. All happy numbers upto that number will be printed\nEnter number: ")	#get top number from user
+
+#I even had time to go back and add some basic input checking
 try:
 	topnum=int(topnum)
 except ValueError:
 	print("That was not a freaking number!")
-	exit()
+	exit(1)	#unhappy exit
 
 for i in range(1,topnum+1):	#the +1 means from 1 to topnum inclusive
 	if ishappy(i):
-		print(i)
+		print(i,end=', ')	#print all happy numbers
+
+print()	#a neatness line
