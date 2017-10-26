@@ -45,7 +45,14 @@ def ishappy(num):
 	else:
 		return number
 
-topnum=print("Enter a number. All happy numbers upto that number will be printed\nEnter number:")
-#no time for error checking, assuming perfect input
+topnum=input("Enter a number. All happy numbers upto that number will be printed\nEnter number: ")
 
+try:
+	topnum=int(topnum)
+except ValueError:
+	print("That was not a freaking number!")
+	exit()
 
+for i in range(1,topnum):
+	if ishappy(i):
+		print(i)
