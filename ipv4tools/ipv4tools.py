@@ -24,3 +24,22 @@ def onnet(*address,mask):
 		addresslist.append(address[i] & masklist[i])
 
 	return addresslist
+
+def broadcast(*address,mask):
+	'''generate a broadcast from any address on a network'''
+
+	masklist=mask2list(mask)
+
+	i=0
+	addresslist=[]
+	while(masklist[i]==255 and i<=3):
+		addresslist.insert(i,address[i])
+		i=i+1
+
+
+	while i<=3:
+		addresslist.insert(i,address[i] & masklist[i])
+		addresslist[i]=addresslist[i] + ((masklist[i]-1)%256)
+		i=i+1
+
+	return addresslist
