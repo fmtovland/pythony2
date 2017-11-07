@@ -66,3 +66,23 @@ def netaddr(*address,mask):
 		addresslist.append(address[i] & masklist[i])
 
 	return addresslist
+
+def addr2int(*address):
+	'''convert an address from four octets to one intager'''
+
+	intaddress=0
+	for i in range(0,4):
+		intaddress=intaddress+((256**i)*address[i])
+
+	return intaddress
+
+def int2addr(intaddr):
+	'''convert an intager to a 4 octet address'''
+
+	listaddress=[]
+
+	for i in range(0,4):
+		listaddress.insert(i,intaddr%256)
+		intaddr=int(intaddr/256)
+
+	return listaddress
