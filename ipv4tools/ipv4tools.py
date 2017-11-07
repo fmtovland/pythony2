@@ -34,8 +34,18 @@ def onnet(*address,mask):
 
 	return addresslist
 
-#def broadcast(*address,mask):
-#	'''generate a broadcast from any address on a network'''
+def broadcast(*address,mask):
+	'''generate a broadcast from any address on a network'''
+
+	masklist=mask2list(mask)
+	maskint=addr2int(masklist[0],masklist[1],masklist[2],masklist[3])
+	netaddress=netaddr(address[0],address[1],address[2],address[3],mask=mask)
+	addressint=addr2int(netaddress[0],netaddress[1],netaddress[2],netaddress[3])
+	broadcastaddrint=addressint+(256**4-maskint)-1
+	broadcastaddr=int2addr(broadcastaddrint)
+
+	return broadcastaddr
+
 #
 #	masklist=mask2list(mask)
 #
@@ -86,3 +96,4 @@ def int2addr(intaddr):
 		intaddr=int(intaddr/256)
 
 	return listaddress
+
