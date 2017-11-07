@@ -1,0 +1,14 @@
+id: 1212
+name: Red Pants
+price: 6.00
+stock: 4
+
+id: 123d
+name: White shirt
+price: 14.00
+stock: 5
+
+id: 123c
+name: Blue shirt
+price: 14.50
+stock: 1
