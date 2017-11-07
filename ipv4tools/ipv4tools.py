@@ -11,6 +11,15 @@ def mask2list(mask):
 
 	return masklist
 
+def list2mask(*masklist):
+	'''convert a masklist back to a number between 1 and 32'''
+	from math import log2
+	mask=32
+
+	for i in range(0,4):
+		mask=mask-log2(256-masklist[i])
+
+	return int(mask)
 
 def onnet(*address,mask):
 	'''check if an ipv4 address is on a network
