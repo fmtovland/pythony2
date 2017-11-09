@@ -117,17 +117,18 @@ def main():
 		else:
 			print("checking out")
 			areyousure='?'
-			while areyousure != ('y' or 'n' or 'Y' or 'N'):
+			while areyousure not in ['y','Y','n','N']:
 				areyousure=input("have correct credit card details been entered (Y/N/y/n): ")
 
-			if areyousure == ('y' or 'Y'):
+			if areyousure == 'y' or areyousure == 'Y':
 				savestock(availableItems)
 				print("your receipt:")
 				profit=showcon(availableItems,cart)
 				profits=open("profits.txt","a+")
-				profits.write(("profit of "+(profit))
+				profits.write(("profit of "+str(profit)))
+#				profits.close()
 
-			elif areyousure == ('n' or 'N'):
+			elif areyousure == 'n' or areyousure == 'N':
 				print("well that was a waste of time")
 
 if __name__ == "__main__":
