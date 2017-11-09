@@ -11,7 +11,7 @@ productlist="productlist.txt"	#the filename of the stockfile
 def getstock():
 	'''import the stock list'''
 
-	stockfile=open(productlist.txt,"r")
+	stockfile=open(productlist,"r")
 
 	mydict={}
 
@@ -51,10 +51,38 @@ def savestock(mydict):
 
 	stockfile.close()
 
+def showcon(available,incart):
+	'''print the contents of a shopping basket'''
+	#note: while it doesn't appear in this revision of the program, a shopping basket is a dictionary of product ids with the number of said product ordered as the referenced element
+	#eg {'123c',7} would be 7 Blue shirts
+	total=0
+	for productId in incart:
+		if productId in incart:
+			print(incart[productId],"x",available[productId]["name"],available[productId]["price"])
+			total=total+(incart[productId]*available[productId]["price"])
+
+	print("costing:",total)
+
 def main():
 	'''main block'''
 	availableItems=getstock()	#get a list of all available items
+	cart={}				#create empty shopping cart
 
+	selection=-1
+	while selection != 0:
+		print("Your basket contains:")
+		showcon(availableItems,cart)
+		print("\n")
+
+		print("The following items are available")
+		i=1
+		for id in availableItems:
+			print((str(i)+":"),availableItems[id]["name"],"x",availableItems[id]["stock"])
+			i=i+1
+		print("\n")
+
+		selection=input("Press 0 to checkout. Press any other number to add an item to cart: ")
+		selection=int(selection)
 
 
 if __name__ == "__main__":
