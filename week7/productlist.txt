@@ -3,15 +3,15 @@ name: Red Pants
 stock: 4
 price: 6.0
 
-id: 123d
-name: White shirt
-stock: 5
-price: 14.0
-
 id: 4527
 name: Cheese
 stock: 99
 price: 5.0
+
+id: 123d
+name: White shirt
+stock: 5
+price: 14.0
 
 id: 123c
 name: Blue shirt

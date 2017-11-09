@@ -42,10 +42,10 @@ def savestock(mydict):
 		string="name: "+mydict[id]["name"]+"\n"
 		stockfile.write(string)
 
-		string="stock:"+str(mydict[id]["stock"])+"\n"
+		string="stock: "+str(mydict[id]["stock"])+"\n"
 		stockfile.write(string)
 
-		string="price:"+str(mydict[id]["price"])+"\n"
+		string="price: "+str(mydict[id]["price"])+"\n"
 		stockfile.write(string)
 
 		stockfile.write("\n")
@@ -72,7 +72,7 @@ def main():
 
 	selection=-1
 	while selection != 0:
-		print("Your basket contains:")
+		print("\n\nYour basket contains:")
 		showcon(availableItems,cart)
 		print("\n")
 
@@ -125,8 +125,8 @@ def main():
 				print("your receipt:")
 				profit=showcon(availableItems,cart)
 				profits=open("profits.txt","a+")
-				profits.write(("profit of "+str(profit)))
-#				profits.close()
+				profits.write(("profit of "+str(profit)+"\n"))
+				profits.close()
 
 			elif areyousure == 'n' or areyousure == 'N':
 				print("well that was a waste of time")
