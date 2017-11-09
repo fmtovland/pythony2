@@ -23,6 +23,7 @@ def getstock():
 			mydict[id]["name"]=line.strip()[6:]
 		elif line[0:5].strip() == "stock":
 			mydict[id]["stock"]=line.strip()[7:]
+			mydict[id]["stock"]=int(mydict[id]["stock"])
 		elif line[0:5].strip() == "price":
 			mydict[id]["price"]=line.strip()[7:]
 			mydict[id]["price"]=float(mydict[id]["price"])
@@ -76,14 +77,41 @@ def main():
 
 		print("The following items are available")
 		i=1
+		idlist=[]
 		for id in availableItems:
-			print((str(i)+":"),availableItems[id]["name"],"x",availableItems[id]["stock"])
-			i=i+1
+			if availableItems[id]["stock"] > 0:
+				print((str(i)+":"),availableItems[id]["name"],"x",availableItems[id]["stock"])
+				i=i+1
+				idlist.insert(i,id)
 		print("\n")
 
 		selection=input("Press 0 to checkout. Press any other number to add an item to cart: ")
-		selection=int(selection)
+		try:
+			selection=int(selection)
+		except ValueError:
+			selection=-1
 
+		if selection < 0 or selection > i:
+			print("bad item number")
+
+		elif selection > 0:
+			id=idlist[selection-1]
+			amount=input("How many of that item would you like?: ")
+			try:	#add amount of item to cart
+				amount=int(amount)
+				if amount>0 and amount<=availableItems[id]["stock"]:
+					availableItems[id]["stock"]=availableItems[id]["stock"]-amount
+					cart[id]=cart[id]+amount
+				elif amount>availableItems[id]["stock"]:
+					print("insufficent stock")
+				else:
+					print("Invalid amount")
+				
+			except ValueError:
+				print("Invalid amount")
+
+			except KeyError:
+				cart[id]=amount
 
 if __name__ == "__main__":
 	main()
