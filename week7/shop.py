@@ -42,7 +42,7 @@ def savestock(mydict):
 		string="name: "+mydict[id]["name"]+"\n"
 		stockfile.write(string)
 
-		string="stock:"+mydict[id]["stock"]+"\n"
+		string="stock:"+str(mydict[id]["stock"])+"\n"
 		stockfile.write(string)
 
 		string="price:"+str(mydict[id]["price"])+"\n"
@@ -59,7 +59,7 @@ def showcon(available,incart):
 	total=0
 	for productId in incart:
 		if productId in incart:
-			print(incart[productId],"x",available[productId]["name"],available[productId]["price"])
+			print(incart[productId],"x",available[productId]["name"],"@",available[productId]["price"],"each")
 			total=total+(incart[productId]*available[productId]["price"])
 
 	print("costing",total)
