@@ -1,3 +1,10 @@
+#Program requirements: simulate a shopping cart
+#Author: Liam Mc Cormick
+#date: 8/11/17
+#OS: Gentoo
+#Kernel: 4.13.11
+#python version: 3.4.5
+
 def getstock():
 	'''import the stock list'''
 

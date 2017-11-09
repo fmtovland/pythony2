@@ -12,3 +12,8 @@ id: 123c
 name: Blue shirt
 price: 14.50
 stock: 1
+
+id: 4527
+name: Cheese
+price: 5.00
+stock: 99
