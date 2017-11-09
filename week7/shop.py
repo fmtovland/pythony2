@@ -62,7 +62,8 @@ def showcon(available,incart):
 			print(incart[productId],"x",available[productId]["name"],available[productId]["price"])
 			total=total+(incart[productId]*available[productId]["price"])
 
-	print("costing:",total)
+	print("costing",total)
+	return total
 
 def main():
 	'''main block'''
@@ -106,12 +107,28 @@ def main():
 					print("insufficent stock")
 				else:
 					print("Invalid amount")
-				
+
 			except ValueError:
 				print("Invalid amount")
 
 			except KeyError:
 				cart[id]=amount
+
+		else:
+			print("checking out")
+			areyousure='?'
+			while areyousure != ('y' or 'n' or 'Y' or 'N'):
+				areyousure=input("have correct credit card details been entered (Y/N/y/n): ")
+
+			if areyousure == ('y' or 'Y'):
+				savestock(availableItems)
+				print("your receipt:")
+				profit=showcon(availableItems,cart)
+				profits=open("profits.txt","a+")
+				profits.write(("profit of "+(profit))
+
+			elif areyousure == ('n' or 'N'):
+				print("well that was a waste of time")
 
 if __name__ == "__main__":
 	main()
