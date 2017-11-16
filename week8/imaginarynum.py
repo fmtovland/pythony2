@@ -10,3 +10,23 @@
 #OS: Gentoo
 #Kernel: 4.13.11
 #python version: 3.4.5
+
+class ImaginaryNum():
+	'''a class to represent an imaginary number'''
+
+	def __init__(self,rnum,inum):
+		'''Rnum is the real part of the number, inum is the imaginary'''
+		self.Rnum=rnum
+		self.Inum=inum
+
+	def __str__(self):
+		'''return the imaginary number as a string'''
+		return (str(self.Rnum)+"+"+str(self.Inum)+"i")
+
+	def getRealPart(self):
+		'''retrieve the real part of the number'''
+		return self.Rnum
+
+	def getImaginaryPart(self):
+		'''retrieve the imaginary part of the number'''
+		return self.Inum
