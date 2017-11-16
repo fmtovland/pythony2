@@ -5,3 +5,24 @@
 #OS: Gentoo
 #Kernel: 4.13.11
 #python version: 3.4.5
+
+class Item():
+	'''an item in a hypothetical shopping kart
+	this would have been nice last week!'''
+
+	def __init__(self,name,price,quantity):
+		self.Name=name
+		self.Price=price
+		self.Quantity=quantity
+
+	def setName(self,name):
+		'''change the name of the item'''
+		self.Name=name
+
+	def setPrice(self,price):
+		'''change the price of the item'''
+		self.Price=price
+
+	def setQuantity(self,quantity):
+		'''change the number of items in the object'''
+		self.Quantity=quantity
