@@ -26,3 +26,20 @@ class Item():
 	def setQuantity(self,quantity):
 		'''change the number of items in the object'''
 		self.Quantity=quantity
+
+	def getName(self):
+		'''check the name of the item'''
+		return self.Name
+
+	def getPrice(self):
+		'''check the price of the item'''
+		return self.Price
+
+	def getQuantity(self):
+		'''check the quantity of the item'''
+		return self.Quantity
+
+	def getTotal(self):
+		'''check the total cost of all items in the object'''
+		Total=self.Price * self.Quantity
+		return Total
