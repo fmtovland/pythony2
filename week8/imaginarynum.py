@@ -49,3 +49,13 @@ def addInums(inum1,inum2):
 	total.setImaginaryPart(inum=inum1.getImaginaryPart()+inum2.getImaginaryPart())
 
 	return total
+
+def subInums(inum1,inum2):
+	'''subtract two imaginary numbers from oneanother'''
+
+	total=ImaginaryNum(0,0)
+
+	total.setRealPart(rnum=inum1.getRealPart()-inum2.getRealPart())
+	total.setImaginaryPart(inum=inum1.getImaginaryPart()-inum2.getImaginaryPart())
+
+	return total
