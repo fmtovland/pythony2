@@ -21,7 +21,11 @@ class ImaginaryNum():
 
 	def __str__(self):
 		'''return the imaginary number as a string'''
-		return (str(self.Rnum)+"+"+str(self.Inum)+"i")
+		if self.Inum<0:
+			sign=""
+		else:
+			sign="+"
+		return (str(self.Rnum)+sign+str(self.Inum)+"i")
 
 	def getRealPart(self):
 		'''retrieve the real part of the number'''
