@@ -30,3 +30,22 @@ class ImaginaryNum():
 	def getImaginaryPart(self):
 		'''retrieve the imaginary part of the number'''
 		return self.Inum
+
+	def setRealPart(self,rnum):
+		'''change the value of the real part of the number'''
+		self.Rnum=rnum
+
+	def setImaginaryPart(self,inum):
+		'''change the value of the imaginary part of the number'''
+		self.Inum=inum
+
+
+def addInums(inum1,inum2):
+	'''add two imaginary numbers together'''
+
+	total=ImaginaryNum(0,0)
+
+	total.setRealPart(rnum=inum1.getRealPart()+inum2.getRealPart())
+	total.setImaginaryPart(inum=inum1.getImaginaryPart()+inum2.getImaginaryPart())
+
+	return total
