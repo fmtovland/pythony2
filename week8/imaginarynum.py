@@ -59,3 +59,13 @@ def subInums(inum1,inum2):
 	total.setImaginaryPart(inum=inum1.getImaginaryPart()-inum2.getImaginaryPart())
 
 	return total
+
+def mulInums(inum1,inum2):
+	'''multiply 2 imaginary numbers together'''
+
+	realpart1=inum1.getRealPart()*inum2.getRealPart()
+	imaginarypart1=inum1.getImaginaryPart()*inum2.getRealPart()
+	imaginarypart2=inum1.getRealPart()*inum2.getImaginaryPart()
+	realpart2=-(inum1.getImaginaryPart()*inum2.getImaginaryPart())
+
+	return ImaginaryNum(realpart1+realpart2,imaginarypart1+imaginarypart2)
