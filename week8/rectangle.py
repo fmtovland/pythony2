@@ -8,3 +8,26 @@
 #OS: Gentoo
 #Kernel: 4.13.11
 #Python version: 3.4.5
+
+class Rectangle():
+
+	def __init__(self,width,height):
+		self.Width=width
+		self.Height=height
+
+	def setHeight(self,height):
+		self.Height=height
+
+	def setWidth(self,width):
+		self.Width=width
+
+	def getHeight(self):
+		return self.Height
+
+	def getWidth(self):
+		return self.Width
+
+	def getArea(self):
+		area=self.Width * self.Height
+		return area
+
