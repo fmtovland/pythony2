@@ -1,0 +1,4 @@
+1,Don Quixote,Miguel de Cervantes,13.99
+2,A Tale of Two Cities,Darles Chickens,12.90
+3,The Lord of the Rings,J. R. R. Tolkien,20.00
+4,Le Petit Prince,Antoine de Saint-Exupery,10.00
