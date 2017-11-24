@@ -5,6 +5,8 @@
 #Kernel: Linux 4.13.11
 #python version 3.4.5
 
+sep=',' #sepperator, should be same as in file
+
 def importlibrary():
 	'''read in list of books from file and save as a dictionary of book classes'''
 
@@ -30,7 +32,7 @@ class Book():
 
 	def __str__(self):
 		'''return a string that looks like the format of the file'''
-		sep=','	#sepperator, should be same as in file
+#		sep=','	#sepperator, should be same as in file
 		return self.title+sep+self.author+sep+str(self.price)
 
 	#sets and gets
@@ -95,7 +97,7 @@ def status(library):
 	'''return a string of all books in library'''
 
 	for id in library:
-		print(library[id])
+		print(id,library[id])
 	print("\n")
 
 def discount(library,ratio):
@@ -112,7 +114,7 @@ def savelib(library,filename):
 	file=open(filename,"w+")
 
 	for id in library:
-		file.writelines(library[id].__str__()+"\n")
+		file.writelines(str(id)+','+library[id].__str__()+"\n")
 
 	file.close()
 
