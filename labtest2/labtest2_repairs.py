@@ -53,7 +53,13 @@ def addBook(library):
 	'''add a book to the library from user input
 	santax: library=addbook(library)'''
 
-	id=int(input("Enter an id for the new book: "))	#get id of new book from user
+
+	id=input(("Enter an id for the new book: "))	#get id of new book from user
+
+	try:
+		id=int(id)
+	except:
+		print("Warning: non numeric id detected")
 
 	#if taken
 	for i in library:
