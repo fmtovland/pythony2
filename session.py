@@ -36,12 +36,7 @@ class Session():
 		return os.listdir(self.sessdir)
 
 	def __str__(self):
-		returnme={}
-
-		for item in self.values():
-			returnme[item]=self[item]
-
-		return str(returnme)
+		return str(self.__dict__)
 
 	def __repr__(self):
 		return "<Session object with sid "+self.sid+">"
