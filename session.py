@@ -29,6 +29,9 @@ class Session():
 		if not os.path.exists(self.sessdir):
 			os.makedirs(self.sessdir)
 
+		#make the object convertable to a dictionary
+		self.__dict__=self.__dict__()
+
 	def values(self):	#list all available keys
 		return os.listdir(self.sessdir)
 
@@ -57,11 +60,21 @@ class Session():
 		try:
 			file=open(self.sessdir+"/"+key,"w+")
 			file.write(value)
+			self.__dict__=self.__dict__() #update the dictionary
 		except TypeError:
 			file.write("")
 
 		return
 
+	def __iter__(self):
+		for item in os.listdir(self.sessdir):
+			yield item
+
+	def __dict__(self):
+		returnme={}
+		for item in self:
+			returnme[item]=self[item]
+		return returnme
 
 def session_start():
 	COOKIE=cookies.SimpleCookie()
