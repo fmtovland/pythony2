@@ -1,3 +1,7 @@
+#I was messing around with cgi scripts and I couldn't find a native equivilant to phps $_SESSION variable
+#so I made one myself
+
+
 import os
 from time import time
 from http import cookies
